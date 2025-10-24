@@ -203,5 +203,5 @@ git_override(
 git_override(
     module_name = "boringssl",
     remote = "https://github.com/HunterChan-SR/BoringSSL-GM",
-    commit = "fff65d707be7383e252a11f8e41a8641c3bc0671",
+    commit = "183ba71508de1f8be9a6f415e074c32a0bc97bc1",
 )
