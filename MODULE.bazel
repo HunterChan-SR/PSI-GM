@@ -197,11 +197,11 @@ use_repo(
 git_override(
     module_name = "private_join_and_compute",
     remote = "https://github.com/HunterChan-SR/private-join-and-compute-gm",
-    commit = "101ff6d145288c641eb65cdbf0d8be3a703ab5f8",
+    commit = "269230ec547eced49cd885157b27ee26ef6bbc6a",
 )
 # 启用国密版
 git_override(
     module_name = "boringssl",
     remote = "https://github.com/HunterChan-SR/BoringSSL-GM",
-    commit = "183ba71508de1f8be9a6f415e074c32a0bc97bc1",
+    commit = "9d9fcfd96d02fd4009df61cb799acabac7836473",
 )

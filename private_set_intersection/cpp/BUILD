@@ -139,13 +139,41 @@ cc_binary(
     ],
 )
 
-cc_binary(
-    name = "main",
-    srcs = ["main.cpp"],
+cc_test(
+    name = "sm3_test",
+    srcs = ["sm3_test.cpp"],
     deps = [
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
         "@boringssl//:crypto",
         "@boringssl//:ssl",
         "@private_join_and_compute//private_join_and_compute/crypto:ec_commutative_cipher",
         "@private_join_and_compute//private_join_and_compute/crypto:bn_util",
     ]
+)
+
+cc_test(
+    name = "sm3_to_sm2_test",
+    srcs = ["sm3_to_sm2_test.cpp"],
+    deps = [
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
+        "@boringssl//:crypto",
+        "@boringssl//:ssl",
+        "@private_join_and_compute//private_join_and_compute/crypto:ec_commutative_cipher",
+        "@private_join_and_compute//private_join_and_compute/crypto:bn_util",
+    ]
+)
+
+cc_binary(
+    name = "main",
+    srcs = ["main.cpp"],
+    linkopts = PSI_LINKOPTS,
+    deps = [
+        ":psi_client",
+        ":psi_server",
+        "@boringssl//:crypto",
+        "@boringssl//:ssl",
+        "@abseil-cpp//absl/strings",
+    ],
 )

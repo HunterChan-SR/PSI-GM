@@ -37,7 +37,7 @@ class PsiClientTest : public ::testing::Test {
     PSI_ASSERT_OK_AND_ASSIGN(
         server_ec_cipher_,
         ::private_join_and_compute::ECCommutativeCipher::CreateWithNewKey(
-            NID_X9_62_prime256v1,
+            /*NID_X9_62_prime256v1*/NID_sm2,
             ::private_join_and_compute::ECCommutativeCipher::HashType::SM3/*SHA256*/));
   }
 

@@ -58,7 +58,7 @@ StatusOr<std::unique_ptr<PsiClient>> PsiClient::CreateWithNewKey(
   ASSIGN_OR_RETURN(
       auto ec_cipher,
       ::private_join_and_compute::ECCommutativeCipher::CreateWithNewKey(
-          NID_X9_62_prime256v1,
+          /*NID_X9_62_prime256v1*/NID_sm2,
           ::private_join_and_compute::ECCommutativeCipher::HashType::SM3/*SHA256*/));
 
   // Create a new instance of the PsiClient class using the ECCommutativeCipher
@@ -82,7 +82,7 @@ StatusOr<std::unique_ptr<PsiClient>> PsiClient::CreateFromKey(
   ASSIGN_OR_RETURN(
       auto ec_cipher,
       ::private_join_and_compute::ECCommutativeCipher::CreateFromKey(
-          NID_X9_62_prime256v1, key_bytes,
+          /*NID_X9_62_prime256v1*/NID_sm2, key_bytes,
           ::private_join_and_compute::ECCommutativeCipher::HashType::SM3/*SHA256*/));
   return absl::WrapUnique(
       new PsiClient(std::move(ec_cipher), reveal_intersection));
