@@ -29,7 +29,7 @@ bazel_dep(name = "rules_proto_grpc_python", version = "5.1.0")
 bazel_dep(name = "rules_python", version = "1.4.1")
 bazel_dep(name = "rules_rust", version = "0.53.0")
 
-bazel_dep(name = "private_join_and_compute", version = "0.0.1")  # 版本任意，会被覆盖
+bazel_dep(name = "private_join_and_compute", version = "0.0.1")  
 
 ## EMSDK
 emsdk_version = "4.0.10"
@@ -193,13 +193,13 @@ use_repo(
     "org_golang_google_protobuf",
 )
 
-# 启用国密版
+
 git_override(
     module_name = "private_join_and_compute",
     remote = "https://github.com/HunterChan-SR/private-join-and-compute-gm",
     commit = "269230ec547eced49cd885157b27ee26ef6bbc6a",
 )
-# 启用国密版
+
 git_override(
     module_name = "boringssl",
     remote = "https://github.com/HunterChan-SR/BoringSSL-GM",
