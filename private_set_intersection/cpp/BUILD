@@ -127,17 +127,17 @@ cc_test(
     ],
 )
 
-cc_binary(
-    name = "psi_benchmark",
-    srcs = ["psi_benchmark.cpp"],
-    linkopts = PSI_LINKOPTS,
-    deps = [
-        ":psi_client",
-        ":psi_server",
-        "@abseil-cpp//absl/strings",
-        "@google_benchmark//:benchmark_main",
-    ],
-)
+# cc_binary(
+#     name = "psi_benchmark",
+#     srcs = ["psi_benchmark.cpp"],
+#     linkopts = PSI_LINKOPTS,
+#     deps = [
+#         ":psi_client",
+#         ":psi_server",
+#         "@abseil-cpp//absl/strings",
+#         "@google_benchmark//:benchmark_main",
+#     ],
+# )
 
 cc_test(
     name = "sm3_test",
