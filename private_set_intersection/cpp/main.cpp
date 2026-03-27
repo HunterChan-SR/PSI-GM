@@ -231,7 +231,7 @@ int mprocess(int num_server_inputs, int num_client_inputs){
 }
 
 int main() { 
-  // 如果不需要测试 HashToCurve，可以注释掉
+  // 
   // T_hash_to_curve(); 
   // process();
 
